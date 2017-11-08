@@ -1,26 +1,28 @@
-# my-vue-starter
+# My Vue Starter
+
+A small Vue.js + Vuex + VueMaterial starter project
 
 To start:
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 To develop:
 
 ```bash
-$ npm run dev```
+$ yarn run dev```
 
 To build for production:
 
 ```bash
-$ npm run build
+$ yarn run build
 ```
 
 To lint you code:
 
 ```bash
-$ npm run lint
+$ yarn run lint
 ```
 
 
