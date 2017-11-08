@@ -1,11 +1,16 @@
 <template>
   <div class="counter-wrapper">
-    <div class="counter">
-      {{ count }}
-    </div>
-    <button @click="$store.commit('INCREMENT')">Increment</button>
-    <button @click="$store.commit('DECREMENT')">Decrement</button>
-    <button @click="$store.dispatch('incrementAsync')">Increment Async</button>
+    <md-card md-with-hover>
+      <div class="counter">
+        {{ count }}
+      </div>
+      <md-ink-ripple></md-ink-ripple>
+      <md-card-actions>
+        <md-button class="md-icon-button md-raised" @click="$store.commit('INCREMENT')"><md-icon>add</md-icon></md-button>
+        <md-button class="md-icon-button md-raised" @click="$store.commit('DECREMENT')"><md-icon>remove</md-icon></md-button>
+        <md-button class="md-icon-button md-raised" @click="$store.dispatch('incrementAsync')"><md-icon>forward</md-icon></md-button>
+      </md-card-actions>
+    </md-card>
   </div>
 </template>
 
@@ -21,7 +26,7 @@ export default {
 
 <style>
 .counter {
-  margin: 100px auto;
+  margin: 10px auto;
   border-radius: 3px;
   width: 200px;
   height: 200px;
