@@ -1,9 +1,16 @@
 <template>
   <div class="counter-wrapper">
-    <md-card md-with-hover>
-      <div class="counter">
-        {{ count }}
-      </div>
+    <md-card>
+      <md-card-header>
+        <md-card-header-text>
+          <div class="md-title">The Counter</div>
+        </md-card-header-text>
+      </md-card-header>
+      <md-card-content>
+        <div class="counter">
+          {{ count }}
+        </div>
+      </md-card-content>
       <md-ink-ripple></md-ink-ripple>
       <md-card-actions>
         <md-button class="md-icon-button md-raised" @click="$store.commit('INCREMENT')"><md-icon>add</md-icon></md-button>
