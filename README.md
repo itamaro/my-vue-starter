@@ -11,7 +11,8 @@ $ yarn install
 To develop:
 
 ```bash
-$ yarn run dev```
+$ yarn run dev
+```
 
 To build for production:
 
