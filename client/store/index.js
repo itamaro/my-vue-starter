@@ -1,19 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { firebaseAction, firebaseMutations } from 'vuexfire'
 
 Vue.use(Vuex)
 
+const strict = true;
+
 const state = {
-  count: 0
+  count: {"value": null}
 }
 
 const mutations = {
   INCREMENT (state) {
-    state.count++
+    this.counterRef.child("value").set(state.count.value + 1)
   },
   DECREMENT (state) {
-    state.count--
-  }
+    this.counterRef.child("value").set(state.count.value - 1)
+  },
+  ...firebaseMutations
 }
 
 const actions = {
@@ -21,13 +25,23 @@ const actions = {
     setTimeout(() => {
       commit('INCREMENT')
     }, 200)
-  }
+  },
+  setCounterRef: firebaseAction(({ bindFirebaseRef }, ref) => {
+    bindFirebaseRef('count', ref)
+    store.counterRef = ref
+  }),
+}
+
+const getters = {
+  count: state => state.count,
 }
 
 const store = new Vuex.Store({
+  strict,
   state,
   mutations,
-  actions
+  getters,
+  actions,
 })
 
 export default store

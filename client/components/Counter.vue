@@ -8,7 +8,7 @@
       </md-card-header>
       <md-card-content>
         <div class="counter">
-          {{ count }}
+          {{ count.value }}
         </div>
       </md-card-content>
       <md-ink-ripple></md-ink-ripple>
@@ -22,12 +22,10 @@
 </template>
 
 <script>
+import Vuex from 'vuex'
+
 export default {
-  computed: {
-    count() {
-      return this.$store.state.count
-    }
-  }
+  computed: Vuex.mapState(['count'])
 }
 </script>
 

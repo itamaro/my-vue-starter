@@ -1,6 +1,6 @@
 # My Vue Starter
 
-A small Vue.js + Vuex + VueMaterial starter project
+A small Vue.js + Vuex + Firebase (with VuexFire) + VueMaterial starter project
 
 To start:
 
