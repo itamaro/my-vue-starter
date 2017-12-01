@@ -8,16 +8,16 @@ import store from './store'
 import 'vue-material/dist/vue-material.css'
 
 let config = {
-  apiKey: 'AIzaSyDOthcx9EAS4Hqy7YI0_vrNV923aM8x41w',
-  authDomain: 'weight-track-644d5.firebaseapp.com',
-  databaseURL: 'https://weight-track-644d5.firebaseio.com',
-  projectId: 'weight-track-644d5',
-  storageBucket: 'weight-track-644d5.appspot.com',
-  messagingSenderId: '102598797725'
+  apiKey: 'AIzaSyDghyGJtYmOY93Iw4cTaM9R2ydPNX2r66U',
+  authDomain: 'counter-demo-w00t.firebaseapp.com',
+  databaseURL: 'https://counter-demo-w00t.firebaseio.com',
+  projectId: 'counter-demo-w00t',
+  storageBucket: '',
+  messagingSenderId: '92757085039'
 }
 let firebaseApp = Firebase.initializeApp(config)
 let firebaseDB = firebaseApp.database()
-let counterRef = firebaseDB.ref('count')
+let counterRef = firebaseDB.ref('public/count')
 
 sync(store, router)
 
